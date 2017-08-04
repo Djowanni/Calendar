@@ -183,7 +183,6 @@ function saveEvent(event) {
 
         if (event.target.parentNode.children[1].value != "") {
             eventsList.addEvent(currentRealYear, currentRealMonth, today, event.target.parentNode.children[1].value, "", "");
-            //saveToLocalStorage();
             fillCalendarArr(currentCalendarYear, currentCalendarMonth);
 
             formController.closeForm();
@@ -197,6 +196,7 @@ function saveEvent(event) {
             formController.closeForm();
         }
     }
+    saveToLocalStorage();
 }
 function refreshEvent(event) {
     event.preventDefault();
@@ -204,12 +204,14 @@ function refreshEvent(event) {
     fillCalendarArr(currentCalendarYear, currentCalendarMonth);
 
     formController.closeExistEventForm();
+    saveToLocalStorage();
 }
 function deleteExistEvent (event) {
     event.preventDefault();
     eventsList.events.splice(parseInt(document.getElementById("isActive").lastElementChild.textContent), 1);
     formController.closeExistEventForm();
     fillCalendarArr(currentCalendarYear, currentCalendarMonth);
+    saveToLocalStorage();
 }
 
 function saveToLocalStorage() {
@@ -224,9 +226,6 @@ function saveToLocalStorage() {
         }
     }
     }
-function getFromLocalStorage() {
-    return JSON.parse(localStorage.getItem("list"));
-}
 
 // Конструктор объекта хранящего массив данных
 function EventsList() {
