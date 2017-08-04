@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>The Calendar</title>
+</head>
+<body>
+    <div class="head_div">
+        <div class="inserted_div">
+            <span class="for_buttons">
+                <button class="head_button">Добавить</button>
+                <button class="head_button">Обновить</button> <!-- Назначение кнопки не описано в ТЗ-->
+            </span>
+
+            <span class="for_input">
+                <img class="magnifyingGlass" src="images/magnifyingGlass.png">
+                <input class="head_input" type="text" placeholder="Событие, дата или участник">
+            </span>
+        </div>
+    </div>
+
+    <div class="main_div">
+        <div class="date_bar">
+            <button class="date_button">&#9668;</button>
+            <div class="current_month_div">Август</div>
+            <div class="current_year_div">2017</div>
+            <button class="date_button">&#9658;</button>
+            <button class="date_button">Сегодня</button>
+        </div>
+        <div class="table_div">
+
+        </div>
+    </div>
+
+    <form class="fast_creating_event_form">
+        <button class="cancel_button">&#215;</button>
+        <input class="form_input" type="text" placeholder="Название события">
+        <button class="forms_buttons">Создать</button>
+    </form>
+
+    <form class="creating_event_form">
+        <button class="cancel_button">&#215;</button>
+        <input class="form_input" type="text" placeholder="Событие">
+        <input class="form_input" type="text" placeholder="Имена участников">
+
+        <textarea class="form_input form_area_description" placeholder="Описание"></textarea>
+        <button class="forms_buttons">Создать</button>
+        <button class="forms_buttons">Удалить</button> <!-- Назначение кнопки не описано в ТЗ-->
+    </form>
+
+    <form class="exist_event_form">
+        <button class="cancel_button">&#215;</button>
+        <div class="exist_event_div"></div>
+        <div class="table_item_data_div"></div>
+        <textarea class="form_input form_area_description" placeholder="Описание"></textarea>
+        <button class="forms_buttons">Готово</button>
+        <button class="forms_buttons">Удалить</button>
+    </form>
+
+    <script src="MakeTable.js"></script>
+    <script src="FormController.js"></script>
+    <script src="ChangeCalendar.js"></script>
+</body>     
+</html>
